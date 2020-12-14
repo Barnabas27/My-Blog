@@ -1,0 +1,28 @@
+{% extends 'base.html'%} 
+{% import "bootstrap/wtf.html" as wtf %} 
+{% block content %}
+
+<style>
+    body {
+        background-image:url('');
+        background-size:cover;
+        background-repeat: no-repeat;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 style="font-size: 80px; font-family: 'Lobster', cursive;  padding-top: 40px; text-align: center;"> Welcome to BeezBlog
+                <hr>Website</h2>
+            </div>
+            <div class="col-md-6">
+                <div style="width: 60%; height:50%">
+                    <h2>Join BeezBlog</h2>
+                    <br> {{ wtf.quick_form(subscriber_form) }}
+
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    {%endblock%}
