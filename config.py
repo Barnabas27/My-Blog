@@ -1,7 +1,7 @@
 import os
 class Config:
     
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:12345@localhost/blog'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:12345@localhost/blogs'
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     
     MAIL_SERVER = 'smtp.gmail.com'
@@ -19,15 +19,15 @@ class Config:
 class ProdConfig(Config):
     
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-    pass
+    
     
 class TestConfig(Config):
     
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:12345@localhost/blog'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:12345@localhost/blogs_test1'
 
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:12345@localhost/blog'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:12345@localhost/blogs'
     
     DEBUG = True
 
