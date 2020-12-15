@@ -1,4 +1,29 @@
-{%extends 'bootstrap/base.html'%}
-{%block navbar%}
-{%include 'navbar.html'%}
+{% extends 'base.html' %}
+ {%block content%}
+ <style>
+  body {
+      background-image: url('../static/louis-reed-nf183J3S2Lw-unsplash.jpg');
+  }
+  
+  .container {
+      margin-left: 0px;
+      margin-top: 50px;
+  }
+</style>
+<div class="container">
+    <div class="col-md-8">
+        <div>
+            <h2 style="font-size: 80px; font-family: 'Lobster', cursive;  padding-top: 40px; text-align: center;" style="color: aliceblue;">
+                Welcome to BeezBlog Website</h2>
+            <br><br>
+
+            <p class="text-center" style="color: antiquewhite;">{{quotes.quote}}</p>
+
+            <p class="text-center" style="color:ivory"><b>~ {{quotes.author}} ~</b> </p>
+
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
 {%endblock%}

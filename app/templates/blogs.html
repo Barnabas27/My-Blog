@@ -1,0 +1,52 @@
+
+{% extends 'base.html'%}
+
+{%block content%}
+<style>
+    body {
+        background-image: url('');
+        height: 70vh;
+        width: 100%;
+        background-size: cover;
+    }
+    
+    .panel {
+        background-color: rgba(23, 25, 35, 0.8);
+        color: #fff;
+    }
+    
+    .panel-footer {
+        background-color: rgba(23, 25, 35, 0.8);
+        color: #fff;
+    }
+</style>
+
+
+<div class="container">
+    <div class="row">
+        {%for blog in blog%}
+        <div class=" col-md-4">
+            <div class="panel text-center" style="box-shadow: 0 4px 8px 0 rgba(15, 14, 14, 0.87);">
+                <div class="panel-head text-info">
+                    <h3>{{blog.title}}</h3>
+                </div>
+                <hr>
+                <div class="panel-body">
+                    <p>{{blog.content}}</p>
+                    <p class="text-right text-muted"> <b>~ {{blog.author}} ~</b></p>
+                </div>
+                <div class="panel-footer">
+                    <p class="date text-muted">Published  on ~ {{date_posted}}</p>
+                    <a href="{{url_for('main.viewBlog', id=blog.id)}}"><i class="btn btn-warning">VIEW</i></a>&nbsp;&nbsp;&nbsp;&nbsp; {% if blog.user == current_user%}
+                    <a href="{{url_for('main.delete', id=blog.id)}}"><i class="btn btn-warning">DELETE</i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="{{url_for('main.new_blog', id=blog.id)}}"><i class="btn btn-warning">EDIT</i></a> {% endif %}
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+
+{%endblock%}
+
+

@@ -18,3 +18,8 @@ class UpdateProfile(FlaskForm):
 class CommentForm(FlaskForm):
     text = TextAreaField('Leave a comment:',validators=[Required()])
     submit = SubmitField('Submit')
+    
+class SubscriberForm(FlaskForm):
+    email = StringField('Enter your email address:')
+    name = StringField('Enter your name',validators=[Required()])
+    submit = SubmitField('Subscribe')
